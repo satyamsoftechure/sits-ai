@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  View Draft
+{% endblock %}
+
+{% block content %}
+  <div class="container mt-1 main-container">
+    <a href="/my_drafts"><button class="back_button"><i class="fa-solid fa-arrow-left p-0"></i> Back to Draft</button></a>
+    <button class="back_button" data-bs-toggle="modal" data-bs-target="#displayModal"><i class="fa-solid fa-eye py-0"></i></button>
+    <div class="content-div my-3">
+      <h1 class="title-heading text-center m-0">Title : {{ draft.title }}</h1>
+      <button class="copy-btn" data-clipboard-text="{{ draft.title }}"><i class="far fa-copy"></i></button>
+    </div>
+    {% comment %} <div class="content-div">
+      <img src="{{ draft.image_url }}" alt="{{ draft.title }}" class="img-fluid mb-4" />
+      <button class="download-btn" onclick="downloadImage('{{ draft.image_url }}', '{{ draft.title }}')"><i class="fa-solid fa-download"></i></button>
+    </div> {% endcomment %}
+    <div class="content-div">
+      <div>
+        <h2 class="pb-0">Meta Description</h2>
+        <p>{{ draft.meta_description }}</p>
+      </div>
+      <button class="copy-description" data-clipboard-text="{{ draft.meta_description }}"><i class="far fa-copy"></i></button>
+    </div>
+    <div class="content-div">
+      <div class="blog-content">{{ draft.content|safe }}</div>
+      <button class="copy-html" data-clipboard-text="{{ draft.content }}"><i class="far fa-copy"></i></button>
+    </div>
+  </div>
+  <div class="modal fade login_register_modal" id="displayModal" tabindex="-1" aria-labelledby="displayModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div>
+            <div>
+              <h4>Keywords</h4>
+              <p>{{ draft.keywords }}</p>
+            </div>
+            <div>
+              <h4>Reference site</h4>
+              <p>{{ draft.reference }}</p>
+            </div>
+            <div>
+              <h4>Language</h4>
+              <p>{{ draft.language }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+  <script>
+    const copyHtml = document.querySelector('.copy-html')
+    
+    const clipboardHtml = new ClipboardJS(copyHtml)
+    
+    clipboardHtml.on('success', () => {
+      const tooltip = document.createElement('div')
+      tooltip.className = 'tooltip'
+      tooltip.textContent = 'Copied!'
+      copyHtml.appendChild(tooltip)
+      setTimeout(() => {
+        tooltip.remove()
+      }, 1500)
+    })
+    
+    copyHtml.addEventListener('click', () => {})
+    
+    const copyBtn = document.querySelector('.copy-btn')
+    const clipboard = new ClipboardJS(copyBtn)
+    clipboard.on('success', () => {
+      const tooltip = document.createElement('div')
+      tooltip.className = 'tooltip'
+      tooltip.textContent = 'Copied!'
+      copyBtn.appendChild(tooltip)
+      setTimeout(() => {
+        tooltip.remove()
+      }, 1500)
+    })
+    
+    copyBtn.addEventListener('click', () => {})
+    
+    const copyDescription = document.querySelector('.copy-description')
+    const clipboarddesc = new ClipboardJS(copyDescription)
+    clipboarddesc.on('success', () => {
+      const tooltip = document.createElement('div')
+      tooltip.className = 'tooltip'
+      tooltip.textContent = 'Copied!'
+      copyDescription.appendChild(tooltip)
+      setTimeout(() => {
+        tooltip.remove()
+      }, 1500)
+    })
+    
+    copyDescription.addEventListener('click', () => {})
+  </script>
+{% endblock %}
