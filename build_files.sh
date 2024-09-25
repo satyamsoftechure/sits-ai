@@ -1,6 +1,4 @@
-    pip install setuptools
-    pip install -r requirements.txt
-    
-    python manage.py makemigrations
-    python manage.py migrate
-    python manage.py collectstatic
+echo "Build start"
+python3.12 -m pip install -r requirements.txt
+python3.12 manage.py collectstatic --noinput --clear
+echo "Build end"
