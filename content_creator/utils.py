@@ -5,9 +5,7 @@ import requests
 from io import BytesIO
 import random   
 import re
-from difflib import SequenceMatcher
 from bs4 import BeautifulSoup
-from joblib import Memory
 import nltk
 from nltk.tokenize import sent_tokenize
 
