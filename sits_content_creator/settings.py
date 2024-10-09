@@ -133,14 +133,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-GEMINI_API_KEY = 'AIzaSyDpOh72lrOq4WRIL5k8AETa5YH9PWl3hgo'
+GEMINI_API_KEY = 'AIzaSyDpOh72lrfbafghnjbaweryigwregOq4WRIL5k8AETa5YH9PWl3hgo'
 
-PIXABAY_API_KEY = '45887828-f62eeeb2d9f6fe062b86add02'
+PIXABAY_API_KEY = '45887828-f62eeegnwrgweruifweryfgwerfweuifweb2d9f6fe062b86add02'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
+EMAIL_PORT = dwdwdw58454647
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'satyam.softechure@gmail.com'
-EMAIL_HOST_PASSWORD = 'qphd vkwf omvs pqvu'
-DEFAULT_FROM_EMAIL = 'satyam.softechure@gmail.com'
+EMAIL_HOST_USER = 'wdwdwdw.wdwdwdwd@gmail.com'
+EMAIL_HOST_PASSWORD = 'wdwdwdwdwdwdw'
+DEFAULT_FROM_EMAIL = 'xyz.wdwdwdwd@gmail.com'
